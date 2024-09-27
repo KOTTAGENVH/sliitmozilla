@@ -42,7 +42,7 @@ const Page: React.FC = () => {
             key={index}
             className={`px-3 py-1 ${
               currentPage === index
-                ? "text-black bg-customOrange"
+                ? "text-white bg-customOrange rounded-3xl"
                 : "bg-orange-200 text-black"
             }`}
             onClick={() => setCurrentPage(index)}
