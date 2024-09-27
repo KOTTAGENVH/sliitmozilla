@@ -1,3 +1,4 @@
+"use client";
 import Drawer from "@/components/drawer";
 import Header from "@/components/header";
 
