@@ -26,7 +26,7 @@ function Header() {
 
   //Handle Event Click
   const handleEventClick = () => {
-    router.push("/event");
+    router.push("/events");
   };
 
   //Handle Blog Click
