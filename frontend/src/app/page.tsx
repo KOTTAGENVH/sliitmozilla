@@ -7,6 +7,6 @@ export default function Home() {
     <div className="h-screen w-screen bg-white">
       <Header />
       <Drawer />
-    </div>
+      </div>
   );
 }

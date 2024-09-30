@@ -12,6 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customOrange: 'rgb(255, 75, 7)',
+        customBrown: 'rgb(75, 1, 1)',
       },
     },
   },
