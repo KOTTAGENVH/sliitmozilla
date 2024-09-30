@@ -4,17 +4,12 @@ import Drawer from "@/components/drawer";
 import Header from "@/components/header";
 import eventData from "@/data/events.json";
 import EventCard from "@/components/event-card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowCircleLeft,
-  faArrowCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Page: React.FC = () => {
   const [currentPageUpcoming, setCurrentPageUpcoming] = useState(0);
   const [currentPagePast, setCurrentPagePast] = useState(0);
   const [currentPageWebinar, setCurrentPageWebinar] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(4); 
+  const [itemsPerPage, setItemsPerPage] = useState(4);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,10 +35,7 @@ const Page: React.FC = () => {
           onClick={() => setCurrentPage(currentPage - 1)}
           className="text-black hover:text-customOrange"
         >
-          <FontAwesomeIcon
-            icon={faArrowCircleLeft}
-            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer text-black "
-          />
+          Prev
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
@@ -64,10 +56,7 @@ const Page: React.FC = () => {
           onClick={() => setCurrentPage(currentPage + 1)}
           className="text-black hover:text-customOrange"
         >
-          <FontAwesomeIcon
-            icon={faArrowCircleRight}
-            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer text-black "
-          />
+          Next
         </button>
       </div>
     );
@@ -88,15 +77,6 @@ const Page: React.FC = () => {
       <Header />
       <Drawer />
       <div className="bg-white">
-        <style jsx>{`
-          body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            height: 100%;
-            width: 100%;
-          }
-        `}</style>
         <h1 className="font-montserrat mb-4 mt-8 justify-center text-center text-4xl md:text-7xl font-bold text-customOrange">
           Upcoming Events
         </h1>
