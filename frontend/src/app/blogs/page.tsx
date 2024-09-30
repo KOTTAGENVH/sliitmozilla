@@ -1,19 +1,38 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Drawer from "@/components/drawer";
 import Header from "@/components/header";
 import AnimatedButton from "@/components/animatedBtn";
-import Image from "next/image";
+import MainBlog from "@/components/mainBlog";
+import blogData from "@/data/blogs.json";
+import BlogCard from "@/components/blogCard";
 
 function Page() {
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+
+  //Use effect to limit the items rendered based on Page
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 3 : 6);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  //All blogs
+  const allBlogs = blogData.blogData;
+
+  //Function for View All
   function handleViewAllClick() {
     window.open("https://medium.com/@infosliitmcc", "_blank");
   }
 
   return (
-    <div className="h-screen w-screen bg-white">
+    <div className="h-screen w-screen bg-white overflow-auto">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
@@ -48,23 +67,20 @@ function Page() {
           handleButtonClick={handleViewAllClick}
         />
       </div>
-      <div className="h-auto w-full flex flex-row justify-center items-center p-12">
-        <Image
-          src="/blogDummy.jpg"
-          width={100}
-          height={100}
-          alt="Mozilla Logo"
-          className="cursor-pointer rounded-3xl h-56 w-9/12"
-        />
-        <div className="h-56 w-full m-2 p-2">
-          <span className="bg-orange-100 text-customOrange text-md 
-          me-2 px-2.5 py-1.5 rounded-3xl ">
-            Latest
-          </span>
-          <h1 className="text-3xl text-black p-4">
-          The Power of Open Source: How Mozilla Shaped the Web
-          </h1>
-        </div>
+      <MainBlog />
+      <div className="flex flex-row flex-wrap items-center justify-center ">
+        {allBlogs.slice(0, itemsPerPage).map((blog) => (
+          <BlogCard
+            key={blog.id}
+            category={blog.category}
+            image={blog.image}
+            title={blog.title}
+            description={blog.description}
+            author={blog.author}
+            time={blog.time}
+            url={blog.url}
+          />
+        ))}
       </div>
     </div>
   );

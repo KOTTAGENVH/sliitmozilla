@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Drawer from "@/components/drawer";
 import Header from "@/components/header";
 import eventData from "@/data/events.json";
-import EventCard from "@/components/event-card";
+import EventCard from "@/components/eventCard";
 
 const Page: React.FC = () => {
   const [currentPageUpcoming, setCurrentPageUpcoming] = useState(0);
