@@ -33,7 +33,7 @@ const Page: React.FC = () => {
           title="previous"
           disabled={currentPage === 0}
           onClick={() => setCurrentPage(currentPage - 1)}
-          className="text-black"
+          className="text-black hover:text-customOrange"
         >
           Prev
         </button>
@@ -42,8 +42,8 @@ const Page: React.FC = () => {
             key={index}
             className={`px-3 py-1 ${
               currentPage === index
-                ? "text-black bg-customOrange"
-                : "bg-orange-200 text-black"
+                ? "text-white bg-customOrange rounded-full"
+                : "bg-orange-200 text-black rounded-full"
             }`}
             onClick={() => setCurrentPage(index)}
           >
@@ -54,7 +54,7 @@ const Page: React.FC = () => {
           title="Next"
           disabled={currentPage === totalPages - 1}
           onClick={() => setCurrentPage(currentPage + 1)}
-          className="text-black"
+          className="text-black hover:text-customOrange"
         >
           Next
         </button>
