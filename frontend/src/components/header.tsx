@@ -146,7 +146,7 @@ function Header() {
           />
           <FontAwesomeIcon
             icon={darkmode ? faSun : faMoon} // Change icon based on dark mode status
-            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer cursor-pointer text-black m-2 p-2"
+            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer text-black m-2 p-2"
             onClick={toggleDarkMode}
           />
         </div>

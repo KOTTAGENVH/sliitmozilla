@@ -4,12 +4,17 @@ import Drawer from "@/components/drawer";
 import Header from "@/components/header";
 import eventData from "@/data/events.json";
 import EventCard from "@/components/event-card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowCircleLeft,
+  faArrowCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Page: React.FC = () => {
   const [currentPageUpcoming, setCurrentPageUpcoming] = useState(0);
   const [currentPagePast, setCurrentPagePast] = useState(0);
   const [currentPageWebinar, setCurrentPageWebinar] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(4); // Default to desktop
+  const [itemsPerPage, setItemsPerPage] = useState(4); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,7 +40,10 @@ const Page: React.FC = () => {
           onClick={() => setCurrentPage(currentPage - 1)}
           className="text-black hover:text-customOrange"
         >
-          Prev
+          <FontAwesomeIcon
+            icon={faArrowCircleLeft}
+            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer text-black "
+          />
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
@@ -56,7 +64,10 @@ const Page: React.FC = () => {
           onClick={() => setCurrentPage(currentPage + 1)}
           className="text-black hover:text-customOrange"
         >
-          Next
+          <FontAwesomeIcon
+            icon={faArrowCircleRight}
+            className="w-4 h-4 md:w-6 md:h-6 cursor-pointer text-black "
+          />
         </button>
       </div>
     );
