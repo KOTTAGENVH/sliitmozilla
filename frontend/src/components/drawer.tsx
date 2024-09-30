@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { useDrawerContext } from "@/contextApi/drawerState";
 import Image from "next/image";
 import AnimatedButton from "./animatedBtn";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function Drawer() {
-  const [darkmode, setDarkmode] = useState(false);
   const { toggleDrawer } = useDrawerContext();
   const router = useRouter();
   const { open } = useDrawerContext();
@@ -25,11 +22,6 @@ function Drawer() {
   //Handle About Click
   const handleAboutClick = () => {
     router.push("/about");
-  };
-
-  //Toggle Darkmode
-  const toggleDarkMode = () => {
-    setDarkmode(!darkmode);
   };
 
   return (
@@ -51,14 +43,14 @@ function Drawer() {
         </div>
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded"
+          className="w-full text-black hover:bg-customOrange hover:text-white  py-2 px-4 rounded"
           onClick={() => navigatePage("/home")}
         >
           Home
         </button>
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded"
+          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/about")}
         >
           About
@@ -66,7 +58,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded"
+          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/events")}
         >
           Events
@@ -74,7 +66,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded"
+          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/blogs")}
         >
           Blogs
@@ -82,7 +74,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded"
+          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/contact")}
         >
           Contact
@@ -94,12 +86,6 @@ function Drawer() {
           handleButtonClick={handleAboutClick}
         />
         </div>
-        <hr className="shadow-lg font-bold" />
-        <FontAwesomeIcon
-          icon={darkmode ? faSun : faMoon} // Change icon based on dark mode status
-          className="w-full cursor-pointer cursor-pointer text-black m-2 p-2 justify-self-center self-center"
-          onClick={toggleDarkMode}
-        />
         <hr className="shadow-lg font-bold" />
       </div>
     </div>
