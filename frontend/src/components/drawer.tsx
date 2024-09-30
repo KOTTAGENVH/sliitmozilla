@@ -50,7 +50,7 @@ function Drawer() {
         </button>
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
+          className="w-full text-black hover:bg-customOrange  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/about")}
         >
           About
@@ -58,7 +58,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
+          className="w-full text-black hover:bg-customOrange  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/events")}
         >
           Events
@@ -66,7 +66,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
+          className="w-full text-black hover:bg-customOrange  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/blogs")}
         >
           Blogs
@@ -74,7 +74,7 @@ function Drawer() {
         <hr className="shadow-lg font-bold" />
         <hr className="shadow-lg font-bold" />
         <button
-          className="w-full text-black hover:bg-sky-50  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
+          className="w-full text-black hover:bg-customOrange  py-2 px-4 rounded hover:bg-customOrange hover:text-white"
           onClick={() => navigatePage("/contact")}
         >
           Contact
